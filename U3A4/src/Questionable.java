@@ -5,7 +5,7 @@ public interface Questionable {
 
     public String getQuestionType();
 
-    public char getAnswer();
+    public String getAnswer();
 
     public String toString();
 }

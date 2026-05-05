@@ -1,4 +1,7 @@
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,6 +9,7 @@ public class Quiz {
     private String path, subject, author, title;
     private int questionCount;
     private Question[] questions;
+    private static final String QUIZ_FILE = "src\\quiz.txt";
 
     public Quiz(String path) {
         try {
@@ -58,6 +62,40 @@ public class Quiz {
             // Add the question to the questions array
             questions[questionsParsed] = new Question(questionType, text, answers, answer);
             questionsParsed++;
+        }
+    }
+
+    public void addQuestion(Question q) {
+        Question[] result = new Question[questions.length+1];
+        for(int i = 0; i < questions.length; i++) {
+            result[i] = questions[i];
+        }
+        result[result.length-1] = q;
+        questions = result;
+        questionCount++;
+        saveQuiz();
+    }
+
+    public void saveQuiz() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(QUIZ_FILE))) {
+            // Add players to the leaderboard file
+            writer.write(subject + "\n");
+            writer.write(author + "\n");
+            writer.write(title + "\n");
+            writer.write(questionCount + "\n");
+            for (Question q : questions) {
+                writer.write(q.getQuestionType() + "\n");
+                writer.write(q.getText() + "\n");
+                String str = "";
+                for(String s : q.getAnswerChoices()) {
+                    str = str + s.toUpperCase() + "_";
+                }
+                str = str.substring(0,str.length() - 1);
+                writer.write(str + "\n");
+                writer.write(q.getAnswer().toUpperCase() + "\n");
+            }
+        } catch (IOException e) {
+            System.err.println("Error saving leaderboard file: " + e.getMessage());
         }
     }
 

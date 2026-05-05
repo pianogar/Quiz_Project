@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 
 public class Leaderboard {
-    private static final String LEADERBOARD_FILE = "leaderboard.txt";
+    private static final String LEADERBOARD_FILE = "src\\leaderboard.txt";
     private List<Player> players;
 
     // If clear is true the leaderboard should be cleared,
@@ -75,8 +75,8 @@ public class Leaderboard {
         try (PrintWriter writer = new PrintWriter(new FileWriter(LEADERBOARD_FILE))) {
             // Add players to the leaderboard file
             for (Player p : players) {
-                writer.write(p.getName());
-                writer.write(p.getScore() + "");
+                writer.write(p.getName() + "\n");
+                writer.write(p.getScore() + "\n");
             }
         } catch (IOException e) {
             System.err.println("Error saving leaderboard file: " + e.getMessage());

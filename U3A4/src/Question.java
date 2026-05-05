@@ -25,8 +25,8 @@ public class Question implements Questionable {
         return questionType;
     }
     
-    public char getAnswer() {
-        return answer.charAt(0);
+    public String getAnswer() {
+        return answer;
     }
 
     public String toString() {
