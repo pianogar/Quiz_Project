@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Quizer {
+    private static int score = 0;
     public static void main(String[] args) {
         Quiz quiz = new Quiz("Example Quiz.txt");
         Scanner scr = new Scanner(System.in);
@@ -10,6 +11,7 @@ public class Quizer {
             String answer = scr.nextLine();
             if (q.checkAnswer(answer)) {
                 System.out.println("Correct!");
+                score++;
                 try {
                     Thread.sleep(2000);
                 } catch (Exception e) {
@@ -24,6 +26,7 @@ public class Quizer {
                 }
             }
         }
+        Leaderboard lb = new Leaderboard(false);
         System.out.println("Add a question!\nQuestion Type:\na. True/False\nb. Multiple Choice");
         String questionType = scr.nextLine();
         if(questionType.equals("a")) {
