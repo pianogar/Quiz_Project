@@ -1,6 +1,6 @@
 public class Player {
-     // Create 2 fields: name and score
-     private String name;
+    // Create 2 fields: name and score
+    private String name;
     private int score;
 
     // Create a constructor which accepts 2 parameters, one for the

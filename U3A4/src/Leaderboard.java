@@ -36,7 +36,7 @@ public class Leaderboard {
             }
         }
         // Display the sorted leaderboard
-        for(Player p : players) {
+        for (Player p : players) {
             System.out.println("1. " + p.getName() + ": " + p.getScore());
         }
     }

@@ -46,7 +46,7 @@ public class Quiz {
 
             // Decide whether the question is T/F or Multiple Choice
             // Instantiate the array so it contains the proper size
-            if(questionType.equals("TRUE_FALSE")) {
+            if (questionType.equals("TRUE_FALSE")) {
                 answers = new String[2];
             } else {
                 answers = new String[lines[currentIndex].split("_").length];
@@ -54,7 +54,7 @@ public class Quiz {
 
             // Add the answer choices to the array
             String[] strings = lines[currentIndex++].split("_");
-            for(int i = 0; i < strings.length; i++) {
+            for (int i = 0; i < strings.length; i++) {
                 answers[i] = strings[i];
             }
             // Store the correct answer into a String
@@ -66,11 +66,11 @@ public class Quiz {
     }
 
     public void addQuestion(Question q) {
-        Question[] result = new Question[questions.length+1];
-        for(int i = 0; i < questions.length; i++) {
+        Question[] result = new Question[questions.length + 1];
+        for (int i = 0; i < questions.length; i++) {
             result[i] = questions[i];
         }
-        result[result.length-1] = q;
+        result[result.length - 1] = q;
         questions = result;
         questionCount++;
         saveQuiz();
@@ -87,10 +87,10 @@ public class Quiz {
                 writer.write(q.getQuestionType() + "\n");
                 writer.write(q.getText() + "\n");
                 String str = "";
-                for(String s : q.getAnswerChoices()) {
+                for (String s : q.getAnswerChoices()) {
                     str = str + s.toUpperCase() + "_";
                 }
-                str = str.substring(0,str.length() - 1);
+                str = str.substring(0, str.length() - 1);
                 writer.write(str + "\n");
                 writer.write(q.getAnswer().toUpperCase() + "\n");
             }
