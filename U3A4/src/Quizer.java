@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Quizer {
     private static int score = 0;
+    private static int answered = 0;
 
     public static void main(String[] args) {
         Quiz quiz = new Quiz("Example Quiz.txt");
@@ -26,15 +27,12 @@ public class Quizer {
                     System.out.println(e);
                 }
             }
+            answered++;
         }
         Leaderboard lb = new Leaderboard(false);
-        System.out.println("Add a question!\nQuestion Type:\na. True/False\nb. Multiple Choice");
-        String questionType = scr.nextLine();
-        if (questionType.equals("a")) {
-            questionType = "TRUE_FALSE";
-        } else {
-            questionType = "MULTIPLE_CHOICE";
-        }
+
+        System.out.println("Add a multiple choice question!");
+        String questionType = "MULTIPLE_CHOICE";
         System.out.println("What is the text for your question?");
         String text = scr.nextLine();
         System.out.println("What are your answer choices? (input nothing to continue)");
@@ -48,9 +46,22 @@ public class Quizer {
         for (int i = 0; i < answerChoices.length; i++) {
             answerChoices[i] = answerChoicesList.get(i);
         }
-        System.out.println("What is the answer?");
+        System.out.print("What is the answer? (");
+        for (int i = 'a'; i < 'a' + answerChoices.length - 1; i++) {
+            System.out.print((char) i + ",");
+        }
+        System.out.print((char) ('a' + answerChoices.length - 1) + ")");
         String answer = scr.nextLine();
         Question q = new Question(questionType, text, answerChoices, answer);
         quiz.addQuestion(q);
+
+    }
+
+    public static int getScore() {
+        return score;
+    }
+
+    public static int getAnswered() {
+        return answered;
     }
 }

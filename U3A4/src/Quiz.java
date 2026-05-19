@@ -48,12 +48,14 @@ public class Quiz {
             // Instantiate the array so it contains the proper size
             if (questionType.equals("TRUE_FALSE")) {
                 answers = new String[2];
+            } else if (questionType.equals("MULTIPLE_CHOICE")) {
+                answers = new String[lines[currentIndex].split("`").length];
             } else {
-                answers = new String[lines[currentIndex].split("_").length];
+                answers = new String[1];
             }
 
             // Add the answer choices to the array
-            String[] strings = lines[currentIndex++].split("_");
+            String[] strings = lines[currentIndex++].split("`");
             for (int i = 0; i < strings.length; i++) {
                 answers[i] = strings[i];
             }
@@ -88,7 +90,7 @@ public class Quiz {
                 writer.write(q.getText() + "\n");
                 String str = "";
                 for (String s : q.getAnswerChoices()) {
-                    str = str + s.toUpperCase() + "_";
+                    str = str + s.toUpperCase() + "`";
                 }
                 str = str.substring(0, str.length() - 1);
                 writer.write(str + "\n");
