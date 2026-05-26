@@ -1,28 +1,39 @@
-Math
-Nathan Crane
-Math Test
-6
+Java & Meta
+Nathan Crane & Kyle Holtz
+The Java Quiz Quiz
+9
 TRUE_FALSE
-does 2 + 2 = 4?
-TRUE_FALSE
-True
+Java uses a garbage collector to manage its memory:
+TRUE
 MULTIPLE_CHOICE
-what is 7 + 2?
-4`10`9`27
-c
-TRUE_FALSE
-a is a vowel
-TRUE_FALSE
-true
+Java is a ____ language:
+Compiled`Just-In-Time compiled`Byte-code compiled Virtual Machine`Interpreted
+C
 MULTIPLE_CHOICE
-6-2
-6`9`5`76`3`4
-e
+Which of the following is NOT a Java feature?
+Visual-only underscores in number literals, ex: 1_000_000`Ternary operator, ex int i = true?10:99;`Type inference, ex: var i = Scanner.nextline();`Math.random(max, min) for a random double in the range
+D
 MULTIPLE_CHOICE
-10*2
-20`6`5
-a
-MULTIPLE_CHOICE_VARIABLE
-How many questions have you answered correctly?
+Which programming language is Mr. Wuest making a new class for?
+Python`C`Javascript`Binary`HTML`Terminal`Typescript`C#`C++`Go`Rust`Kotlin`Assembly`Cobol
+A
+MULTIPLE_CHOICE_DYNAMIC
+How many questions have you gotten right so far?
 1
-c
+C
+MULTIPLE_CHOICE_DYNAMIC
+Which of the following 3-letter words have you spelled?
+2
+B
+MULTIPLE_CHOICE
+Which of the following is 100% needed to develop in Java?
+VSCode`Java Development Kit (JDK)`Java Runtime Environment (JRE)'A terminal'Windows'
+B
+MULTIPLE_CHOICE_DYNAMIC
+Who currently holds the highest score for this quiz?
+3
+A
+MULTIPLE_CHOICE
+Which of the following languages are based on Java
+Python`Javascript`C`Kotlin
+D

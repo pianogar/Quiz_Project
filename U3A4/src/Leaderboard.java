@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Leaderboard {
     private static final String LEADERBOARD_FILE = "src\\leaderboard.txt";
-    private List<Player> players;
+    private ArrayList<Player> players = new ArrayList<>();
 
     // If clear is true the leaderboard should be cleared,
     // otherwise it should load the leaderboard.
@@ -26,6 +26,15 @@ public class Leaderboard {
     // Displays the leaderboard sorted by score in descending order.
     public void displayLeaderboard() {
         // Sort players by score (descending order)
+        sort();
+        // Display the sorted leaderboard
+        System.out.println("Leaderboard:");
+        for (int i = 0; i < players.size(); i++) {
+            System.out.println((i+1) + ". " + players.get(i).getName() + ": " + players.get(i).getScore());
+        }
+    }
+
+    private void sort() {
         while (!sorted()) {
             Random rand = new Random();
             for (int i = 0; i < players.size(); i++) {
@@ -34,10 +43,6 @@ public class Leaderboard {
                 players.set(randomIndex, players.get(i));
                 players.set(i, temp);
             }
-        }
-        // Display the sorted leaderboard
-        for (Player p : players) {
-            System.out.println("1. " + p.getName() + ": " + p.getScore());
         }
     }
 
@@ -72,6 +77,7 @@ public class Leaderboard {
 
     // Saves the current leaderboard to the file.
     public void saveLeaderboard() {
+        sort();
         try (PrintWriter writer = new PrintWriter(new FileWriter(LEADERBOARD_FILE))) {
             // Add players to the leaderboard file
             for (Player p : players) {
@@ -81,5 +87,10 @@ public class Leaderboard {
         } catch (IOException e) {
             System.err.println("Error saving leaderboard file: " + e.getMessage());
         }
+    }
+
+    public ArrayList<Player> getPlayers() {
+        sort();
+        return players;
     }
 }
