@@ -30,7 +30,7 @@ public class Leaderboard {
         // Display the sorted leaderboard
         System.out.println("Leaderboard:");
         for (int i = 0; i < players.size(); i++) {
-            System.out.println((i+1) + ". " + players.get(i).getName() + ": " + players.get(i).getScore());
+            System.out.println((i + 1) + ". " + players.get(i).getName() + ": " + players.get(i).getScore());
         }
     }
 

@@ -30,8 +30,9 @@ public class Quizer {
             answered++;
         }
         clearScreen();
-        int finalScore = (int)(score * (15.0/quiz.getQuestionCount()) + 0.5);
-        System.out.println("You got "+ score + "/" + answered + " which converts to " + finalScore + "/15\nPlease enter your name for the leaderboard!");
+        int finalScore = (int) (score * (15.0 / quiz.getQuestionCount()) + 0.5);
+        System.out.println("You got " + score + "/" + answered + " which converts to " + finalScore
+                + "/15\nPlease enter your name for the leaderboard!");
         lb.addPlayer(scr.nextLine(), finalScore);
         clearScreen();
         lb.displayLeaderboard();

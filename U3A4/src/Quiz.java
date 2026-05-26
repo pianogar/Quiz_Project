@@ -76,9 +76,9 @@ public class Quiz {
             result.add(questions[i]);
         }
         // result[result.length - 1] = q;
-        result.add(result.set((int)(Math.random()*result.size()),q));
+        result.add(result.set((int) (Math.random() * result.size()), q));
         Question[] resultArray = new Question[result.size()];
-        for(int i = 0; i < result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             resultArray[i] = result.get(i);
         }
         questions = resultArray;

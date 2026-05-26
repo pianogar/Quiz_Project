@@ -117,7 +117,7 @@ public class Question implements Questionable {
                     Player highestPlayer = players.remove(0);
                     int highScore = highestPlayer.getScore();
                     for (int i = 0; i < players.size(); i++) {
-                        if(players.get(i).getScore() < highScore)
+                        if (players.get(i).getScore() < highScore)
                             break;
                         else {
                             players.remove(i);
