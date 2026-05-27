@@ -15,6 +15,7 @@ public class Quizer {
         scr.nextLine();
         for (Question q : quiz.getQuestions()) {
             clearScreen();
+            System.out.println(score);
             System.out.println(q.toString());
             String answer = scr.nextLine();
             answers.add(answer);

@@ -22,7 +22,7 @@ How many questions have you gotten right so far?
 1
 C
 MULTIPLE_CHOICE_DYNAMIC
-Which of the following 3-letter words have you spelled?
+What were the last three letters you answered?
 2
 B
 MULTIPLE_CHOICE

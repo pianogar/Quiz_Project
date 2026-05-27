@@ -48,8 +48,9 @@ public class Question implements Questionable {
                             random.add(i);
                         }
                     }
+                    System.out.println(answer.charAt(0) - 'A');
                     for (int i = 0; i < 4; i++) {
-                        if (i != answer.charAt(0) - 'a') {
+                        if (i != answer.charAt(0) - 'A') {
                             newAnswers[i] = random.remove((int) (Math.random() * random.size())) + "";
                         } else {
                             newAnswers[i] = Quizer.getScore() + "";
